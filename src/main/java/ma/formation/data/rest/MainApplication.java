@@ -1,18 +1,18 @@
 package ma.formation.data.rest;
 
+import lombok.AllArgsConstructor;
 import ma.formation.data.rest.service.IService;
 import ma.formation.data.rest.service.model.Article;
 import ma.formation.data.rest.service.model.Categorie;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@AllArgsConstructor
 public class MainApplication {
 
-    @Autowired
     private IService service;
 
     public static void main(String[] args) {
