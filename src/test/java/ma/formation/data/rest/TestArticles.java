@@ -42,8 +42,6 @@ class TestArticles {
     @Test
     void testGetArticleById() throws Exception {
 
-        Article article = new Article("Article_1", 120d, 10d);
-
         mvc.perform(get("/ecommerce/1").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.description").value("Article_1"))
