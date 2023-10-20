@@ -32,11 +32,11 @@ class TestArticles {
     @Test
     void testGetAllArticles() throws Exception {
 
-        mvc.perform(get("/articles").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
+        mvc.perform(get("/ecommerce").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$._embedded.articles[0].description").value("Article_1"))
+                .andExpect(jsonPath("$._embedded.articles[0].desc").value("Article_1"))
                 .andExpect(jsonPath("$._embedded.articles[0].price").value(120))
-                .andExpect(jsonPath("$._embedded.articles[0].quantity").value(10));
+                .andExpect(jsonPath("$._embedded.articles[0].quant").value(10));
     }
 
     @Test
