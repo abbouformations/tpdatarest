@@ -11,6 +11,6 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "articles", path = "ecommerce", excerptProjection = ArticleDTO.class)
 public interface ArticleRepository extends JpaRepository<Article, Long> {
-    @RestResource(path = "byDescription", rel = "customFindByDescription")
-    List<Article> findByDescription(@Param("description") String description);
+    @RestResource(path = "byCategorie", rel = "customFindByDescription")
+    List<Article> findByCategorie_Categorie(@Param("categorie") String description);
 }

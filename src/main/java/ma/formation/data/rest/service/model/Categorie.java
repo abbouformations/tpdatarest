@@ -1,6 +1,8 @@
 package ma.formation.data.rest.service.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +12,8 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Categorie {
     @Id
     @GeneratedValue
@@ -20,8 +24,8 @@ public class Categorie {
     @OneToMany(mappedBy = "categorie", cascade = CascadeType.ALL)
     private List<Article> articles = new ArrayList<>();
 
-    public Categorie(String categorie) {
-        this.id = id;
-        this.categorie = categorie;
+    public void addArticle(Article article) {
+        article.setCategorie(this);
+        articles.add(article);
     }
 }

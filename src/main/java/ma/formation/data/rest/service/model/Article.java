@@ -1,12 +1,16 @@
 package ma.formation.data.rest.service.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class Article {
     @Id
     @GeneratedValue
@@ -18,11 +22,4 @@ public class Article {
     @ManyToOne
     @JoinColumn(name = "categorie_id")
     private Categorie categorie;
-
-    public Article(String description, Double price, Double quantity) {
-        this.description = description;
-        this.price = price;
-        this.quantity = quantity;
-    }
-
 }

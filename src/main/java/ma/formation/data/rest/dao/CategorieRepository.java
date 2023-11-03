@@ -7,5 +7,4 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "categories", path = "categories")
 public interface CategorieRepository extends JpaRepository<Categorie, Long> {
-    Categorie findByCategorie(@Param("categorie") String categorie);
 }

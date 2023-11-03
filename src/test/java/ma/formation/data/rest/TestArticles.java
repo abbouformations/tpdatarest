@@ -35,7 +35,7 @@ class TestArticles {
         mvc.perform(get("/ecommerce").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$._embedded.articles[0].desc").value("Article_1"))
-                .andExpect(jsonPath("$._embedded.articles[0].price").value(120))
+                .andExpect(jsonPath("$._embedded.articles[0].price").value(5000))
                 .andExpect(jsonPath("$._embedded.articles[0].quant").value(10));
     }
 
@@ -45,9 +45,8 @@ class TestArticles {
         mvc.perform(get("/ecommerce/1").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.description").value("Article_1"))
-                .andExpect(jsonPath("$.price").value(120D))
-                .andExpect(jsonPath("$.quantity").value(10D));
+                .andExpect(jsonPath("$.price").value(5000))
+                .andExpect(jsonPath("$.quantity").value(10));
     }
-
 
 }
